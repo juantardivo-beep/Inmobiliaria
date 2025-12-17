@@ -17,18 +17,18 @@ export default function HeroSection() {
 
       <div className="container hero__content">
         <div>
-          <h1 className="hero__title">Find your place</h1>
+          <h1 className="hero__title">Encuentre su lugar ideal</h1>
 
           <div className="hero__search-card">
             <div className="hero__search-tabs">
               <Button variant={searchType === "buy" ? "primary" : "ghost"} onClick={() => setSearchType("buy")}>
-                Buy
+                Comprar
               </Button>
               <Button variant={searchType === "rent" ? "primary" : "ghost"} onClick={() => setSearchType("rent")}>
-                Rent
+                Alquilar
               </Button>
               <Button variant={searchType === "sell" ? "primary" : "ghost"} onClick={() => setSearchType("sell")}>
-                Sell
+                Vender
               </Button>
             </div>
 
@@ -36,12 +36,12 @@ export default function HeroSection() {
               <div className="input-wrapper">
                 <Search />
                 <Input
-                  placeholder="City, Neighborhood, Address, School, ZIP, Agent, MLS #"
+                  placeholder="Ciudad, Dirección, ZIP"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                 />
               </div>
-              <Button variant="primary">Search</Button>
+              <Button variant="primary">Buscar</Button>
             </div>
           </div>
         </div>

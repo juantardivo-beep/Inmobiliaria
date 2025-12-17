@@ -7,61 +7,61 @@ export default function Footer() {
       <div className="container">
         <div className="footer__grid">
           <div className="footer__column">
-            <h3>Buy</h3>
+            <h3>Comprar</h3>
             <ul>
               <li>
-                <Link href="/homes">Homes for Sale</Link>
+                <Link href="/homes">Casas en Venta</Link>
               </li>
               <li>
-                <Link href="/condos">Condos for Sale</Link>
+                <Link href="/condos">Condominios en Venta</Link>
               </li>
               <li>
-                <Link href="/new-construction">New Construction</Link>
+                <Link href="/new-construction">Nuevas Construcciones</Link>
               </li>
             </ul>
           </div>
 
           <div className="footer__column">
-            <h3>Rent</h3>
+            <h3>Alquiler</h3>
             <ul>
               <li>
-                <Link href="/apartments">Apartments for Rent</Link>
+                <Link href="/apartments">Departamentos en Alquiler</Link>
               </li>
               <li>
-                <Link href="/houses-rent">Houses for Rent</Link>
+                <Link href="/houses-rent">Casas en Alquiler</Link>
               </li>
               <li>
-                <Link href="/luxury-rentals">Luxury Rentals</Link>
+                <Link href="/luxury-rentals">Alquileres de Lujo</Link>
               </li>
             </ul>
           </div>
 
           <div className="footer__column">
-            <h3>Sell</h3>
+            <h3>Vender</h3>
             <ul>
               <li>
-                <Link href="/sell-home">Sell Your Home</Link>
+                <Link href="/sell-home">Venda su Casa</Link>
               </li>
               <li>
-                <Link href="/home-value">Get Home Value</Link>
+                <Link href="/home-value">Obtener precio de Venta</Link>
               </li>
               <li>
-                <Link href="/concierge">Concierge Service</Link>
+                <Link href="/concierge">(nombre de la inmobiliaria) Servicios</Link>
               </li>
             </ul>
           </div>
 
           <div className="footer__column">
-            <h3>Resources</h3>
+            <h3>Recursos</h3>
             <ul>
               <li>
-                <Link href="/agents">Find an Agent</Link>
+                <Link href="/agents">Encontrar un Agente</Link>
               </li>
               <li>
-                <Link href="/mortgage">Mortgage Calculator</Link>
+                <Link href="/mortgage">Calculadora Hipotecaria</Link>
               </li>
               <li>
-                <Link href="/blog">Real Estate Blog</Link>
+                <Link href="/blog">Blog Inmobiliario</Link>
               </li>
             </ul>
           </div>

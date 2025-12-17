@@ -3,13 +3,13 @@
 
 /* CSS Variables */
 :root {
-  --color-primary: #4a3526;
-  --color-secondary: #b8704d;
+  --color-primary: #2d3250;
+  --color-secondary: #f9b17a;
   --color-light: #fdfcfa;
   --color-dark: #2a1810;
   --color-border: #e8e5e1;
   --font-base: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-serif: "Montserrat", Arial, sans-serif;
 }
 
 /* Global styles */
@@ -251,105 +251,6 @@ h6 {
 .city-card__arrow {
   color: #999;
   transition: color 0.3s ease;
-}
-
-/* Organism styles - Header */
-.header {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  background-color: rgba(253, 252, 250, 0.95);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(232, 229, 225, 0.4);
-}
-
-.header__container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1rem 1.5rem;
-}
-
-.header__nav {
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-}
-
-@media (max-width: 768px) {
-  .header__nav {
-    display: none;
-  }
-}
-
-.header__nav a {
-  color: rgba(42, 24, 16, 0.8);
-  text-decoration: none;
-  font-size: 0.875rem;
-  font-weight: 500;
-  transition: color 0.3s ease;
-}
-
-.header__nav a:hover {
-  color: var(--color-dark);
-}
-
-.header__actions {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
-.header__mobile-toggle {
-  display: none;
-}
-
-@media (max-width: 768px) {
-  .header__mobile-toggle {
-    display: block;
-    background: none;
-    border: none;
-    padding: 0.5rem;
-    cursor: pointer;
-  }
-}
-
-.header__mobile-menu {
-  border-top: 1px solid var(--color-border);
-  background-color: var(--color-light);
-  padding: 1rem 1.5rem;
-}
-
-@media (min-width: 769px) {
-  .header__mobile-menu {
-    display: none;
-  }
-}
-
-.header__mobile-menu nav {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.header__mobile-menu nav a {
-  color: rgba(42, 24, 16, 0.8);
-  text-decoration: none;
-  font-size: 0.875rem;
-  font-weight: 500;
-}
-
-.header__mobile-menu nav a:hover {
-  color: var(--color-dark);
-}
-
-.header__mobile-menu-actions {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  margin-top: 1rem;
-  padding-top: 1rem;
-  border-top: 1px solid var(--color-border);
 }
 
 /* Organism styles - Hero Section */

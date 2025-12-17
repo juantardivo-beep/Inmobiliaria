@@ -54,13 +54,13 @@ export default function FeaturedProperties() {
       <div className="container">
         <div className="featured-properties__header">
           <div>
-            <h2 className="featured-properties__title">Premier Exclusives</h2>
+            <h2 className="featured-properties__title">Propiedades Exclusivas</h2>
             <p className="featured-properties__description">
-              Be the first to browse exclusive listings before they hit the market.
+              Se el primero en ver anuncios exclusivos antes de que salgan al mercado.
             </p>
           </div>
           <div className="d-none d-md-block">
-            <Button variant="outline">View All Properties</Button>
+            <Button variant="outline">Vea todas nuestras propiedades</Button>
           </div>
         </div>
 
@@ -68,12 +68,6 @@ export default function FeaturedProperties() {
           {SAMPLE_PROPERTIES.map((property) => (
             <PropertyCard key={property.id} property={property} />
           ))}
-        </div>
-
-        <div className="mt-4 d-md-none text-center">
-          <Button variant="outline" className="w-100 bg-transparent">
-            View All Properties
-          </Button>
         </div>
       </div>
     </section>

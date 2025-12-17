@@ -5,34 +5,33 @@ export default function ServiceHighlight() {
         <div className="service-highlight__grid">
           <div className="service-highlight__image">
             <img src="/before-and-after-home-renovation.jpg" alt="Home transformation" />
-            <div className="badge">Before & After</div>
           </div>
 
           <div>
-            <h2 className="service-highlight__title">Premier Concierge</h2>
+            <h2 className="service-highlight__title">Otros Servicios</h2>
             <p className="service-highlight__description">
-              Concierge helps you sell your home faster and for more money by covering the cost of home improvement
-              services — zero due until closing.*
+              (Nombre de la inmobiliaria) le ayuda a vender su casa más rápido y por más dinero al cubrir el costo de los servicios de mejoras para el hogar
+              — sin pagos hasta el cierre.*
             </p>
             <ul className="service-highlight__list">
               <li>
                 <div className="bullet"></div>
-                <span>Professional staging and photography</span>
+                <span>Escenografía y fotografía profesionales</span>
               </li>
               <li>
                 <div className="bullet"></div>
-                <span>Home repairs and improvements</span>
+                <span>Reparaciones y mejoras en el hogar</span>
               </li>
               <li>
                 <div className="bullet"></div>
-                <span>No upfront costs or hidden fees</span>
+                <span>Sin costes iniciales ni tarifas ocultas.</span>
               </li>
             </ul>
             <p className="service-highlight__disclaimer">
-              *Depending on your state of residence, fees or interest may apply.
+              *Según el estado en el que residas, pueden aplicarse comisiones o intereses.
             </p>
             <a href="#" className="service-highlight__link">
-              Learn More
+              Más información
               <span>→</span>
             </a>
           </div>
