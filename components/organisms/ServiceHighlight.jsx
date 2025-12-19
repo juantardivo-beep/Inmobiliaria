@@ -4,7 +4,7 @@ export default function ServiceHighlight() {
       <div className="container">
         <div className="service-highlight__grid">
           <div className="service-highlight__image">
-            <img src="/Inmobiliaria/before-and-after-home-renovation.jpg" alt="Home transformation" />
+            <img src="/before-and-after-home-renovation.jpg" alt="Home transformation" />
           </div>
 
           <div>

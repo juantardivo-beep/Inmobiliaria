@@ -13,7 +13,7 @@ export default function PropertyCard({ property }) {
   return (
     <Link href={`/properties/${property.id}`} className="property-card">
       <div className="property-card__image">
-        <img src={`/Inmobiliaria/${property.image}` || "/Inmobiliaria/placeholder.svg"} alt={property.title} />
+        <img src={`/${property.image}` || "/placeholder.svg"} alt={property.title} />
         {property.featured && (
           <div className="property-card__badge">
             <Badge>Exclusive</Badge>
