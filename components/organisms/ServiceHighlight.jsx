@@ -1,10 +1,12 @@
+import { getAssetPath } from "../../helpers/getAssetsPath";
+
 export default function ServiceHighlight() {
   return (
     <section className="service-highlight">
       <div className="container">
         <div className="service-highlight__grid">
           <div className="service-highlight__image">
-            <img src="/before-and-after-home-renovation.jpg" alt="Home transformation" />
+            <img src={getAssetPath("/before-and-after-home-renovation.jpg")} alt="Home transformation" />
           </div>
 
           <div>
