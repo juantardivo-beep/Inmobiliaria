@@ -1,7 +1,6 @@
 import Link from "next/link"
 import Badge from "@/components/atoms/Badge"
 import { Bed, Bath, Square } from "lucide-react"
-import {getAssetPath} from '../../helpers/getAssetsPath'
 
 export default function PropertyCard({ property }) {
   const formattedPrice = new Intl.NumberFormat("en-US", {
@@ -14,7 +13,7 @@ export default function PropertyCard({ property }) {
   return (
     <Link href={`/properties/${property.id}`} className="property-card">
       <div className="property-card__image">
-        <img src={getAssetPath(property.image) || "/placeholder.svg"} alt={property.title} />
+        <img src={`/Inmobiliaria/${property.image}` || "/Inmobiliaria/placeholder.svg"} alt={property.title} />
         {property.featured && (
           <div className="property-card__badge">
             <Badge>Exclusive</Badge>

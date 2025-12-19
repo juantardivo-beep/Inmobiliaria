@@ -7,9 +7,6 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true, // Necesario para static export
   },
-   env: {
-    NEXT_PUBLIC_BASE_PATH: '/Inmobiliria',
-  },
 };
 
 export default nextConfig;
