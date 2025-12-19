@@ -4,7 +4,6 @@ import { useState } from "react"
 import Button from "@/components/atoms/Button"
 import Input from "@/components/atoms/Input"
 import { Search } from "lucide-react"
-import { getAssetPath } from "@/helpers/getAssetsPath"
 
 export default function HeroSection() {
   const [searchType, setSearchType] = useState("buy")
@@ -13,7 +12,7 @@ export default function HeroSection() {
   return (
     <section className="hero">
       <div className="hero__image">
-        <img src={getAssetPath("/modern-luxury-home-exterior-with-beautiful-landsca.jpg")} alt="Luxury home" />
+        <img src="/Inmobiliaria/modern-luxury-home-exterior-with-beautiful-landsca.jpg" alt="Luxury home" />
       </div>
 
       <div className="container hero__content">
