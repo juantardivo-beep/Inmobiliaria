@@ -23,7 +23,8 @@ body {
   font-family: var(--font-base);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: var(--color-light);
+  /* background-color: var(--color-light); */
+  background-color: transparent;
   color: var(--color-dark);
 }
 
@@ -49,8 +50,9 @@ h6 {
 }
 
 .btn-custom-primary:hover {
-  background-color: #3a2816;
-  color: var(--color-light);
+  background-color: var(--color-light);
+  color: var(--color-primary);
+  border: 2px solid var(--color-primary);
   transform: translateY(-1px);
 }
 
@@ -115,18 +117,6 @@ h6 {
   font-weight: 500;
 }
 
-/* Atom styles - Logo */
-.logo {
-  font-family: var(--font-serif);
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: var(--color-dark);
-  text-decoration: none;
-}
-
-.logo:hover {
-  color: var(--color-primary);
-}
 
 /* Molecule styles - Property Card */
 .property-card {
@@ -251,108 +241,6 @@ h6 {
 .city-card__arrow {
   color: #999;
   transition: color 0.3s ease;
-}
-
-/* Organism styles - Hero Section */
-.hero {
-  position: relative;
-  height: 600px;
-  overflow: hidden;
-}
-
-@media (min-width: 768px) {
-  .hero {
-    height: 700px;
-  }
-}
-
-.hero__image {
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-}
-
-.hero__image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.hero__image::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to bottom, rgba(42, 24, 16, 0.4), rgba(42, 24, 16, 0.2), rgba(253, 252, 250, 0.9));
-}
-
-.hero__content {
-  position: relative;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 1rem 1.5rem;
-}
-
-.hero__title {
-  font-size: 3rem;
-  font-weight: 300;
-  color: var(--color-light);
-  margin-bottom: 1.5rem;
-}
-
-@media (min-width: 768px) {
-  .hero__title {
-    font-size: 4.5rem;
-  }
-}
-
-.hero__search-card {
-  background-color: white;
-  border-radius: 0.5rem;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-  padding: 1.5rem;
-  max-width: 48rem;
-}
-
-.hero__search-tabs {
-  display: flex;
-  gap: 0.5rem;
-  margin-bottom: 1rem;
-}
-
-.hero__search-tabs button {
-  flex: 1;
-}
-
-.hero__search-input {
-  display: flex;
-  gap: 0.5rem;
-}
-
-.hero__search-input .input-wrapper {
-  position: relative;
-  flex: 1;
-}
-
-.hero__search-input .input-wrapper svg {
-  position: absolute;
-  left: 0.75rem;
-  top: 50%;
-  transform: translateY(-50%);
-  color: #999;
-  width: 1.25rem;
-  height: 1.25rem;
-}
-
-.hero__search-input .input-wrapper input {
-  padding-left: 2.5rem;
-  height: 3rem;
-}
-
-.hero__search-input button {
-  height: 3rem;
-  padding: 0 2rem;
 }
 
 /* Organism styles - Featured Properties */

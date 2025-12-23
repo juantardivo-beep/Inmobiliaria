@@ -2,25 +2,26 @@
 
 import Logo from "@/components/atoms/Logo"
 import NavLink from "@/components/molecules/NavLink"
-import Button from "@/components/atoms/Button"
 import styles from "./header.module.scss"
+import searchIcon from "../../../assets/search-icon.svg"
 
 export default function Header() {
 
   return (
     <header className={styles.header}>
       <div className={styles.headerContainer}>
-        <Logo />
+        <Logo className={styles.logo}/>
 
         <nav className={styles.headerNav}>
-          <NavLink href="/buy">Comprar</NavLink>
-          <NavLink href="/rent">Alquilar</NavLink>
-          <NavLink href="/sell">Vender</NavLink>
+          <NavLink href="/inicio">Inicio</NavLink>
+          <NavLink href="/alquileres">Alquileres</NavLink>
+          <NavLink href="/ventas">Ventas</NavLink>
+          <NavLink href="/tasaciones">Tasaciones</NavLink>
+          <NavLink href="/internacional">Internacional</NavLink>
+          <NavLink href="/nosotros">Nosotros</NavLink>
+          <NavLink href="/contacto">Contacto</NavLink>
         </nav>
-
-        <div className={styles.headerActions}>
-          <Button variant="ghost">Contacto</Button>
-        </div>
+        <img src={searchIcon.src} alt="Buscar" className={styles.searchIcon} />
       </div>
     </header>
   )

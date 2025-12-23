@@ -1,0 +1,56 @@
+/* Contenedor principal */
+.priceSlider {
+  width: 20rem;
+  margin-top: 1rem;
+}
+
+/* Barra base */
+.priceSlider :global(.rc-slider-rail) {
+  height: 6px;
+  background-color: var(--color-primary);
+  opacity: 0.3;
+  border-radius: 999px;
+}
+
+/* Barra activa */
+.priceSlider :global(.rc-slider-track) {
+  height: 6px;
+  background-color: var(--color-primary);
+  border-radius: 999px;
+}
+
+/* Thumb */
+.priceSlider :global(.rc-slider-handle) {
+  width: 18px;
+  height: 18px;
+  margin-top: -6px;
+  background-color: white;
+  border: 3px solid var(--color-primary);
+  opacity: 1;
+  cursor: pointer;
+}
+
+/* Hover / focus */
+.priceSlider :global(.rc-slider-handle:hover),
+.priceSlider :global(.rc-slider-handle:focus) {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 6px rgba(13, 110, 253, 0.15);
+}
+
+.thumbWrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.thumbLabel {
+  position: absolute;
+  top: 100%;
+  margin-top: 6px;
+  background: transparent;
+  color: var(--color-primary);
+  font-size: 0.75rem;
+  font-weight: 500;
+  white-space: nowrap;
+  pointer-events: none;
+}
