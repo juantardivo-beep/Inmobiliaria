@@ -15,7 +15,7 @@ export default function PropertyCard({ property }) {
     <Link href={`/properties/${property.id}`} className={styles.property__card}>
 
       <div className={styles.property__card__image}>
-        <img src={property.image} alt={property.title} />
+        <img src={`Inmobiliaria/${property.image}`} alt={property.title} />
         {property.featured && (
           <div className={styles.property__card__badge}>
             <Badge>Exclusiva</Badge>

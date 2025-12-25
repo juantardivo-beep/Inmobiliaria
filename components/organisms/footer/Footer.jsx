@@ -13,7 +13,7 @@ export default function Footer() {
     <footer className={styles.footer}>
 
       <div className={styles.background}>
-        <img src={"/footer-background.jpg"} />
+        <img src={"Inmobiliaria//footer-background.jpg"} />
       </div>
 
       <div className={styles.footer__grid}>
