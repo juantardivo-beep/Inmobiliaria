@@ -5,8 +5,11 @@ import Button from "@/components/atoms/Button"
 import Input from "@/components/atoms/Input"
 import { Search } from "lucide-react"
 import styles from "./heroSection.module.scss"
-import { HERO_IMAGES } from "../../../constants/constants"
+import { BEDROOM_OPTIONS, HERO_IMAGES, PROPERTY_TYPES } from "../../../constants/constants"
 import PriceSlider from "../../atoms/PriceSlider/PriceSlider"
+import TypeSelector from "../../atoms/TypeSelector/TypeSelector"
+import Home from "../../../assets/home_3_line.svg"
+import Image from "next/image"
 
 export default function HeroSection() {
   const [searchType, setSearchType] = useState("buy")
@@ -24,6 +27,14 @@ export default function HeroSection() {
 
   return (
     <section className={styles.hero}>
+      <div className={styles.hero__info}>
+          <div className={styles.info__subcontainer}>
+            <Image src={Home} alt={'home_icon'} className={styles.home__icon} />
+            <p className={styles.agency}>Agencia Inmobiliaria</p>
+          </div>
+          <h1>Encuentra la propiedad de tus sueños</h1>
+      </div>
+
       <div className={styles.hero__image}>
         {/* {images.map((src, i) => (
           <img
@@ -33,35 +44,39 @@ export default function HeroSection() {
             className={`${styles.hero__img} ${i === current ? styles.is_active : ""}`}
           />
         ))} */}
-        <img src={"/realState.png"} className={styles.hero__img}></img>
+        <img src={"/hero-building.png"} className={styles.hero__img}></img>
       </div>
 
-      {/* <div className={styles.hero__content}>
-        <div className={styles.hero__search_card}>
-          <p className={styles.hero__title}>Encuentre su propiedad soñada</p>
-          <div className={styles.hero__search_tabs}>
+      <div className={styles.hero__content}>
+        
+        <div className={styles.hero__search_tabs}>
             <Button variant={searchType === "buy" ? "primary" : "ghost"} onClick={() => setSearchType("buy")}>
               Alquiler
             </Button>
             <Button variant={searchType === "rent" ? "primary" : "ghost"} onClick={() => setSearchType("rent")}>
               Venta
             </Button>
-            <PriceSlider/>
           </div>
+
+        <div className={styles.hero__search_card}>
 
           <div className={styles.hero__search_input}>
             <div className={styles.input_wrapper}>
               <Search />
               <Input
-                placeholder="Dirección, Tipo de propiedad"
+                placeholder="País, Ciudad, Dirección"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
+                className={styles.input_custom}
               />
             </div>
+            <TypeSelector options={PROPERTY_TYPES} type={"large"}/>
+            <TypeSelector options={BEDROOM_OPTIONS}/>
+            <PriceSlider />
             <Button variant="primary">Buscar</Button>
           </div>
         </div>
-      </div> */}
+      </div>
     </section>
   )
 }

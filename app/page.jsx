@@ -1,9 +1,8 @@
 import Header from "@/components/organisms/header/Header"
 import HeroSection from "@/components/organisms/hero/HeroSection"
-import FeaturedProperties from "@/components/organisms/FeaturedProperties"
+import FeaturedProperties from "@/components/organisms/properties/Properties"
 import ServiceHighlight from "@/components/organisms/ServiceHighlight"
-import PopularCities from "@/components/organisms/PopularCities"
-import Footer from "@/components/organisms/Footer"
+import Footer from "@/components/organisms/footer/Footer"
 
 export default function HomePage() {
   return (
@@ -11,7 +10,7 @@ export default function HomePage() {
       <Header />
       <HeroSection />
       <FeaturedProperties />
-      <ServiceHighlight />
+      {/* <ServiceHighlight /> */}
       <Footer />
     </main>
   )

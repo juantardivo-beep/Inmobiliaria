@@ -1,5 +1,7 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css");
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:wght@300;400;600&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800&display=swap');
+
 
 /* CSS Variables */
 :root {
@@ -8,8 +10,9 @@
   --color-light: #fdfcfa;
   --color-dark: #2a1810;
   --color-border: #e8e5e1;
-  --font-base: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  --font-serif: "Montserrat", Arial, sans-serif;
+  --font-serif: "Nunito Sans", sans-serif;
+  --color-background: #6e717a;
+  --color-red: #e74c3c;
 }
 
 /* Global styles */
@@ -20,12 +23,11 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: var(--font-base);
+  font-family: var(--font-serif);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* background-color: var(--color-light); */
-  background-color: transparent;
-  color: var(--color-dark);
+  background-color: var(--color-light);
+  color: var(--color-primary);
 }
 
 h1,
@@ -35,14 +37,14 @@ h4,
 h5,
 h6 {
   font-family: var(--font-serif);
-  font-weight: 300;
+  font-weight: 500;
 }
 
 /* Atom styles - Button */
 .btn-custom-primary {
-  background-color: var(--color-primary);
+  background-color: var(--color-red);
   color: var(--color-light);
-  border: none;
+  border: 2px solid var(--color-red);
   padding: 0.75rem 2rem;
   border-radius: 0.5rem;
   font-weight: 500;
@@ -51,15 +53,13 @@ h6 {
 
 .btn-custom-primary:hover {
   background-color: var(--color-light);
-  color: var(--color-primary);
-  border: 2px solid var(--color-primary);
-  transform: translateY(-1px);
+  color: var(--color-red);
 }
 
 .btn-custom-outline {
   background-color: transparent;
-  color: var(--color-dark);
-  border: 1px solid var(--color-border);
+  color: var(--color-red);
+  border: 2px solid var(--color-red);
   padding: 0.75rem 2rem;
   border-radius: 0.5rem;
   font-weight: 500;
@@ -67,9 +67,8 @@ h6 {
 }
 
 .btn-custom-outline:hover {
-  background-color: var(--color-light);
-  border-color: var(--color-primary);
-  color: var(--color-primary);
+  background-color: var(--color-red);
+  color: var(--color-light);
 }
 
 .btn-custom-ghost {
@@ -87,209 +86,8 @@ h6 {
   color: var(--color-primary);
 }
 
-/* Atom styles - Input */
-.input-custom {
-  width: 100%;
-  padding: 0.75rem 1rem;
-  border: 1px solid var(--color-border);
-  border-radius: 0.5rem;
-  font-size: 1rem;
-  transition: all 0.3s ease;
-}
-
-.input-custom:focus {
-  outline: none;
-  border-color: var(--color-secondary);
-  box-shadow: 0 0 0 3px rgba(184, 112, 77, 0.1);
-}
-
-.input-custom::placeholder {
-  color: #999;
-}
-
-/* Atom styles - Badge */
-.badge-exclusive {
-  background-color: var(--color-secondary);
-  color: white;
-  padding: 0.25rem 0.75rem;
-  border-radius: 1rem;
-  font-size: 0.75rem;
-  font-weight: 500;
-}
 
 
-/* Molecule styles - Property Card */
-.property-card {
-  border: 1px solid rgba(232, 229, 225, 0.5);
-  border-radius: 0.5rem;
-  overflow: hidden;
-  transition: all 0.3s ease;
-  background-color: white;
-}
-
-.property-card:hover {
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  transform: translateY(-4px);
-}
-
-.property-card:hover .property-card__image img {
-  transform: scale(1.1);
-}
-
-.property-card:hover .property-card__title {
-  color: var(--color-primary);
-}
-
-.property-card__image {
-  position: relative;
-  aspect-ratio: 4 / 3;
-  overflow: hidden;
-}
-
-.property-card__image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
-
-.property-card__badge {
-  position: absolute;
-  top: 0.75rem;
-  left: 0.75rem;
-}
-
-.property-card__content {
-  padding: 1.25rem;
-}
-
-.property-card__title {
-  font-size: 1.125rem;
-  font-weight: 600;
-  margin-bottom: 0.25rem;
-  transition: color 0.3s ease;
-}
-
-.property-card__location {
-  color: #666;
-  font-size: 0.875rem;
-  margin-bottom: 0.75rem;
-}
-
-.property-card__price {
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: var(--color-primary);
-  margin-bottom: 1rem;
-}
-
-.property-card__features {
-  display: flex;
-  gap: 1rem;
-  color: #666;
-  font-size: 0.875rem;
-}
-
-.property-card__features .feature {
-  display: flex;
-  align-items: center;
-  gap: 0.25rem;
-}
-
-/* Molecule styles - City Card */
-.city-card {
-  padding: 1rem;
-  border: 1px solid var(--color-border);
-  border-radius: 0.5rem;
-  background-color: white;
-  transition: all 0.3s ease;
-  text-decoration: none;
-  display: block;
-}
-
-.city-card:hover {
-  border-color: var(--color-secondary);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-}
-
-.city-card:hover .city-card__name {
-  color: var(--color-primary);
-}
-
-.city-card:hover .city-card__arrow {
-  color: var(--color-primary);
-}
-
-.city-card__content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.city-card__name {
-  font-weight: 500;
-  color: var(--color-dark);
-  margin-bottom: 0.25rem;
-  transition: color 0.3s ease;
-}
-
-.city-card__state {
-  color: #666;
-  font-size: 0.875rem;
-}
-
-.city-card__arrow {
-  color: #999;
-  transition: color 0.3s ease;
-}
-
-/* Organism styles - Featured Properties */
-.featured-properties {
-  padding: 5rem 0;
-  background-color: rgba(232, 229, 225, 0.3);
-}
-
-.featured-properties__header {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  margin-bottom: 3rem;
-}
-
-.featured-properties__title {
-  font-size: 2.5rem;
-  margin-bottom: 0.75rem;
-}
-
-@media (min-width: 768px) {
-  .featured-properties__title {
-    font-size: 3rem;
-  }
-}
-
-.featured-properties__description {
-  color: #666;
-  font-size: 1.125rem;
-  max-width: 42rem;
-}
-
-.featured-properties__grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.5rem;
-}
-
-@media (min-width: 768px) {
-  .featured-properties__grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (min-width: 992px) {
-  .featured-properties__grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
 
 /* Organism styles - Service Highlight */
 .service-highlight {
@@ -406,131 +204,3 @@ h6 {
   gap: 0.75rem;
 }
 
-/* Organism styles - Popular Cities */
-.popular-cities {
-  padding: 5rem 0;
-  background-color: rgba(232, 229, 225, 0.3);
-}
-
-.popular-cities__title {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-}
-
-@media (min-width: 768px) {
-  .popular-cities__title {
-    font-size: 3rem;
-  }
-}
-
-.popular-cities__description {
-  font-size: 1.125rem;
-  color: #666;
-  margin-bottom: 3rem;
-  max-width: 48rem;
-}
-
-.popular-cities__grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
-  margin-bottom: 2rem;
-}
-
-@media (min-width: 768px) {
-  .popular-cities__grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-@media (min-width: 992px) {
-  .popular-cities__grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
-
-.popular-cities__view-all {
-  text-align: center;
-}
-
-.popular-cities__view-all a {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  color: var(--color-primary);
-  font-weight: 500;
-  text-decoration: none;
-  transition: gap 0.3s ease;
-}
-
-.popular-cities__view-all a:hover {
-  gap: 0.75rem;
-}
-
-/* Organism styles - Footer */
-.footer {
-  border-top: 1px solid var(--color-border);
-  background-color: rgba(232, 229, 225, 0.2);
-  padding: 3rem 0;
-}
-
-.footer__grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
-  margin-bottom: 3rem;
-}
-
-@media (min-width: 768px) {
-  .footer__grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
-
-.footer__column h3 {
-  font-size: 1rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
-}
-
-.footer__column ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.footer__column ul li {
-  margin-bottom: 0.75rem;
-}
-
-.footer__column ul li a {
-  color: #666;
-  font-size: 0.875rem;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.footer__column ul li a:hover {
-  color: var(--color-dark);
-}
-
-.footer__bottom {
-  padding-top: 2rem;
-  border-top: 1px solid var(--color-border);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-}
-
-@media (min-width: 768px) {
-  .footer__bottom {
-    flex-direction: row;
-    justify-content: space-between;
-  }
-}
-
-.footer__copyright {
-  color: #666;
-  font-size: 0.875rem;
-}

@@ -1,0 +1,91 @@
+.property__card {
+    border: 1px solid rgba(232, 229, 225, 0.5);
+    border-radius: 0.5rem;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    background-color: white;
+    text-decoration: none;
+}
+
+.property__card:hover {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transform: translateY(-4px);
+}
+
+.property__card:hover .property__card__image img {
+    transform: scale(1.1);
+}
+
+.property__card:hover .property__card__title {
+    color: var(--color-primary);
+}
+
+.property__card__image {
+    position: relative;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+}
+
+.property__card__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+    display: block;
+}
+
+.property__card__image::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.28);
+    pointer-events: none;
+    transition: background 0.3s ease;
+}
+
+.property__card:hover .property__card__image::after {
+    background: rgba(0, 0, 0, 0.18);
+}
+
+.property__card__badge {
+    position: absolute;
+    top: 0.75rem;
+    left: 0.75rem;
+}
+
+.property__card__content {
+    padding: 1.25rem;
+}
+
+.property__card__title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+    transition: color 0.3s ease;
+}
+
+.property__card__location {
+    color: #666;
+    font-size: 0.875rem;
+    margin-bottom: 0.75rem;
+}
+
+.property__card__price {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+}
+
+.property__card__features {
+    display: flex;
+    gap: 1rem;
+    color: #666;
+    font-size: 0.875rem;
+}
+
+.property__card__features .feature {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}

@@ -4,27 +4,30 @@ import { useState } from "react";
 import styles from "./priceSlider.module.scss";
 
 export default function PriceSlider() {
+    const MIN_PRICE = 50000;
 
-    const [price, setPrice] = useState([200000, 800000]);
+    const [maxPrice, setMaxPrice] = useState(800000);
 
     return (
-        <Slider
-            className={styles.priceSlider}
-            range
-            min={50000}
-            max={1000000}
-            step={50000}
-            value={price}
-            onChange={setPrice}
-            handleRender={(node, props) => (
-                console.log(node),
-                <div className={styles.thumbWrapper}>
-                    {node}
-                    <span className={styles.thumbLabel}>
-                        {props.value.toLocaleString()}
-                    </span>
-                </div>
-            )}
-        />
-    )
+        <div className={styles.priceSliderWrapper}>
+            <Slider
+                className={styles.priceSlider}
+                min={MIN_PRICE}
+                max={1000000}
+                step={20000}
+                value={maxPrice}
+                onChange={setMaxPrice}
+                handleRender={(node) => (
+                    <div className={styles.thumbWrapper}>
+                        {node}
+                    </div>
+                )}
+            />
+
+            <span className={styles.priceValue}>
+                Hasta ${maxPrice.toLocaleString()}
+            </span>
+        </div>
+    );
 }
+

@@ -1,0 +1,36 @@
+.featured__properties {
+  padding: 5rem 5rem;
+  background-color: #f6f8fb
+}
+
+.featured__properties__header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 3rem;
+}
+
+.featured__properties__title {
+  font-size: 2.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.featured__properties__description {
+  color: #666;
+  font-size: 1.125rem;
+  max-width: 42rem;
+}
+
+.featured__properties__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+
+  @media (min-width: 640px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

@@ -1,5 +1,6 @@
-import PropertyCard from "@/components/molecules/PropertyCard"
+import PropertyCard from "@/components/molecules/propertyCard/PropertyCard"
 import Button from "@/components/atoms/Button"
+import styles from "./properties.module.scss"
 
 const SAMPLE_PROPERTIES = [
   {
@@ -10,7 +11,7 @@ const SAMPLE_PROPERTIES = [
     bedrooms: 3,
     bathrooms: 2,
     sqft: 2400,
-    image: "/modern-loft-interior-with-city-views.jpg",
+    image: "/contemporary-home-with-mountain-views.jpg",
     featured: true,
   },
   {
@@ -21,7 +22,7 @@ const SAMPLE_PROPERTIES = [
     bedrooms: 5,
     bathrooms: 4,
     sqft: 4200,
-    image: "/luxury-waterfront-villa.png",
+    image: "/contemporary-home-with-mountain-views.jpg",
     featured: true,
   },
   {
@@ -43,19 +44,19 @@ const SAMPLE_PROPERTIES = [
     bedrooms: 3,
     bathrooms: 2.5,
     sqft: 2800,
-    image: "/historic-brooklyn-townhouse.jpg",
+    image: "/contemporary-home-with-mountain-views.jpg",
     featured: true,
   },
 ]
 
 export default function FeaturedProperties() {
   return (
-    <section className="featured-properties">
-      <div className="container">
-        <div className="featured-properties__header">
+    <section className={styles.featured__properties}>
+      
+        <div className={styles.featured__properties__header}>
           <div>
-            <h2 className="featured-properties__title">Propiedades Exclusivas</h2>
-            <p className="featured-properties__description">
+            <h2 className={styles.featured__properties__title}>Propiedades Exclusivas</h2>
+            <p className={styles.featured__properties__description}>
               Se el primero en ver anuncios exclusivos antes de que salgan al mercado.
             </p>
           </div>
@@ -64,12 +65,11 @@ export default function FeaturedProperties() {
           </div>
         </div>
 
-        <div className="featured-properties__grid">
+        <div className={styles.featured__properties__grid}>
           {SAMPLE_PROPERTIES.map((property) => (
             <PropertyCard key={property.id} property={property} />
           ))}
         </div>
-      </div>
     </section>
   )
 }
