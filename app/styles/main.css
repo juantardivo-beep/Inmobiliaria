@@ -8,10 +8,7 @@
   --color-primary: #2d3250;
   --color-secondary: #f9b17a;
   --color-light: #fdfcfa;
-  --color-dark: #2a1810;
   --color-border: #e8e5e1;
-  --font-serif: "Nunito Sans", sans-serif;
-  --color-background: #6e717a;
   --color-red: #e74c3c;
 }
 
@@ -23,7 +20,7 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: var(--font-serif);
+  font-family: 'Din-Bold';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--color-light);
@@ -35,9 +32,24 @@ h2,
 h3,
 h4,
 h5,
-h6 {
-  font-family: var(--font-serif);
+h6,
+p {
+  font-family: 'Din';
   font-weight: 500;
+}
+
+h1{
+   font-family: 'Din-Bold';
+}
+
+@font-face {
+  font-family: 'Din-Bold';
+  src: url('./fonts/DINPro-Bold.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Din';
+  src: url('./fonts/DINPro.otf') format('opentype');
 }
 
 /* Atom styles - Button */

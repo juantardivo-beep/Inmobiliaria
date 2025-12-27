@@ -1,36 +1,14 @@
-import { Analytics } from "@vercel/analytics/next"
+import Header from "@/components/organisms/header/Header"
+import Footer from "@/components/organisms/footer/Footer"
 import "./styles/main.css"
-
-export const metadata = {
-  title: "Premier Real Estate | Find Your Dream Home",
-  description:
-    "Discover exceptional properties and connect with expert agents. Browse homes for sale, apartments for rent, and exclusive listings in top markets.",
-  generator: "v0.app",
-  icons: {
-    icon: [
-      {
-        url: "/icon-light-32x32.png",
-        media: "(prefers-color-scheme: light)",
-      },
-      {
-        url: "/icon-dark-32x32.png",
-        media: "(prefers-color-scheme: dark)",
-      },
-      {
-        url: "/icon.svg",
-        type: "image/svg+xml",
-      },
-    ],
-    apple: "/apple-icon.png",
-  },
-}
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        {children}
-        <Analytics />
+        <Header />
+        <main className="min-vh-100">{children}</main>
+        <Footer />
       </body>
     </html>
   )

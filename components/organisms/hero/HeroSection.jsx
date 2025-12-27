@@ -32,7 +32,8 @@ export default function HeroSection() {
             <Image src={Home} alt={'home_icon'} className={styles.home__icon} />
             <p className={styles.agency}>Agencia Inmobiliaria</p>
           </div>
-          <h1>Encuentra la propiedad de tus sueños</h1>
+          <h3>ENCUENTRA LA PROPIEDAD</h3>
+          <h1>DE TUS SUEÑOS</h1>
       </div>
 
       <div className={styles.hero__image}>
@@ -44,16 +45,16 @@ export default function HeroSection() {
             className={`${styles.hero__img} ${i === current ? styles.is_active : ""}`}
           />
         ))} */}
-        <img src={"/hero-building.png"} className={styles.hero__img}></img>
+        <img src={"/hero-buildings.jpg"} className={styles.hero__img}></img>
       </div>
 
       <div className={styles.hero__content}>
         
         <div className={styles.hero__search_tabs}>
-            <Button variant={searchType === "buy" ? "primary" : "ghost"} onClick={() => setSearchType("buy")}>
+            <Button variant={searchType === "buy" ? "primary" : "outline"} onClick={() => setSearchType("buy")}>
               Alquiler
             </Button>
-            <Button variant={searchType === "rent" ? "primary" : "ghost"} onClick={() => setSearchType("rent")}>
+            <Button variant={searchType === "rent" ? "primary" : "outline"} onClick={() => setSearchType("rent")}>
               Venta
             </Button>
           </div>

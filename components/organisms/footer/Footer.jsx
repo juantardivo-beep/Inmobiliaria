@@ -13,7 +13,7 @@ export default function Footer() {
     <footer className={styles.footer}>
 
       <div className={styles.background}>
-        <img src={"Inmobiliaria//footer-background.jpg"} />
+        <img src={"/footer-background.jpg"} />
       </div>
 
       <div className={styles.footer__grid}>
@@ -22,16 +22,16 @@ export default function Footer() {
           <h3>Asociados</h3>
           <ul>
             <li>
-              <img src={"/cci.jpg"}/>
+              <img src={"/cci.jpg"} />
             </li>
             <li>
-              <img src={"/ceci.jpg"}/>
+              <img src={"/ceci.jpg"} />
             </li>
             <li>
-              <img src={"/fira.jpg"}/>
+              <img src={"/fira.jpg"} />
             </li>
             <li>
-              <img src={"/micros-inmobiliarios.png"}/>
+              <img src={"/micros-inmobiliarios.png"} />
             </li>
           </ul>
         </div>
@@ -103,8 +103,8 @@ export default function Footer() {
       </div>
 
       <div className={styles.footer__bottom}>
-        <Logo className={styles.logo}/>
         <p className={styles.footer__copyright}>© {new Date().getFullYear()} Premier Real Estate. All rights reserved.</p>
+        <Logo className={styles.logo} footer={true}/>
       </div>
     </footer>
   )

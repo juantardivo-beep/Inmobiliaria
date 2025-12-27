@@ -31,20 +31,6 @@
     height: 100%;
     object-fit: cover;
     transition: transform 0.3s ease;
-    display: block;
-}
-
-.property__card__image::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.28);
-    pointer-events: none;
-    transition: background 0.3s ease;
-}
-
-.property__card:hover .property__card__image::after {
-    background: rgba(0, 0, 0, 0.18);
 }
 
 .property__card__badge {
