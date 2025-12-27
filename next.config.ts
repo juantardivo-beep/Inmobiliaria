@@ -2,12 +2,13 @@
 const isProd = process.env.NODE_ENV === 'production'
 
 const nextConfig = {
-  basePath: isProd ? '/Inmobiliaria' : '',
-  assetPrefix: isProd ? '/Inmobiliaria' : '',
-  output: 'export',
-  images: {
-    unoptimized: true
-  }
+    basePath: isProd ? '/Inmobiliaria' : '',
+    assetPrefix: isProd ? '/Inmobiliaria' : '',
+    output: 'export',
+    images: {
+        unoptimized: true
+    },
+    trailingSlash: true,
 }
 
 module.exports = nextConfig
