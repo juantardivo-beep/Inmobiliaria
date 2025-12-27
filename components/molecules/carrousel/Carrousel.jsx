@@ -1,14 +1,20 @@
+import Image from 'next/image'
 import styles from './carrousel.module.scss'
 import { useState, useEffect } from "react"
+import Inmobiliaria1 from '../../../assets/inmobiliaria_1.jpg'
+import Inmobiliaria2 from '../../../assets/inmobiliaria_2.jpg'
+import Inmobiliaria3 from '../../../assets/inmobiliaria_3.jpg'
+import Inmobiliaria4 from '../../../assets/inmobiliaria_4.jpg'
+import Inmobiliaria5 from '../../../assets/inmobiliaria_5.jpg'
 
 export default function Carrousel() {
 
     const carouselImages = [
-        "/inmobiliaria_1.jpg",
-        "/inmobiliaria_2.jpg",
-        "/inmobiliaria_3.jpg",
-        "/inmobiliaria_4.jpg",
-        "/inmobiliaria_5.jpg",
+        Inmobiliaria1,
+        Inmobiliaria2,
+        Inmobiliaria3,
+        Inmobiliaria4,
+        Inmobiliaria5,
     ]
 
     const [currentSlide, setCurrentSlide] = useState(0)
@@ -29,7 +35,7 @@ export default function Carrousel() {
                 <button className={styles.prevBtn} onClick={prevSlide}>
                     ❮
                 </button>
-                <img src={carouselImages[currentSlide]} alt={`Inmobiliaria ${currentSlide + 1}`} />
+                <Image src={carouselImages[currentSlide]} alt={`Inmobiliaria ${currentSlide + 1}`} />
                 <button className={styles.nextBtn} onClick={nextSlide}>
                     ❯
                 </button>

@@ -7,13 +7,18 @@ import worldIcon from "../../../assets/world-icon.svg"
 import mailIcon from "../../../assets/mail-icon.svg"
 import matriculaIcon from "../../../assets/matricula-icon.svg"
 import Image from "next/image"
+import background from '../../../assets/footer-background.jpg'
+import cci from '../../../assets/cci.jpg'
+import ceci from '../../../assets/ceci.jpg'
+import fira from '../../../assets/fira.jpg'
+import micros from '../../../assets/micros-inmobiliarios.png'
 
 export default function Footer() {
   return (
     <footer className={styles.footer}>
 
       <div className={styles.background}>
-        <img src={"/footer-background.jpg"} />
+        <Image src={background} alt='background'/>
       </div>
 
       <div className={styles.footer__grid}>
@@ -22,16 +27,16 @@ export default function Footer() {
           <h3>Asociados</h3>
           <ul>
             <li>
-              <img src={"/cci.jpg"} />
+              <Image src={cci} alt='cci'/>
             </li>
             <li>
-              <img src={"/ceci.jpg"} />
+              <Image src={ceci} alt='ceci'/>
             </li>
             <li>
-              <img src={"/fira.jpg"} />
+              <Image src={fira} alt='fira'/>
             </li>
             <li>
-              <img src={"/micros-inmobiliarios.png"} />
+              <Image src={micros} alt='micros'/>
             </li>
           </ul>
         </div>
@@ -104,7 +109,7 @@ export default function Footer() {
 
       <div className={styles.footer__bottom}>
         <p className={styles.footer__copyright}>© {new Date().getFullYear()} Premier Real Estate. All rights reserved.</p>
-        <Logo className={styles.logo} footer={true}/>
+        <Logo className={styles.logo} footer={true} />
       </div>
     </footer>
   )

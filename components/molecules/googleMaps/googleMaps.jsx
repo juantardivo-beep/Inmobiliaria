@@ -3,6 +3,8 @@
 import { useEffect, useRef } from 'react'
 import { Loader } from '@googlemaps/js-api-loader'
 import styles from './googleMaps.module.scss'
+import maps from '../../../assets/maps.png'
+import Image from 'next/image'
 
 // export default function GoogleMaps() {
 //     const mapRef = useRef(null)
@@ -48,7 +50,7 @@ import styles from './googleMaps.module.scss'
 export default function GoogleMaps(){
     return(
         <div className={styles.container}>
-            <img src={'/maps.png'}></img>
+            <Image src={maps} alt='maps'/>
         </div>
     )
 }

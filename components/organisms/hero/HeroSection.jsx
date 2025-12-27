@@ -10,6 +10,7 @@ import PriceSlider from "../../atoms/PriceSlider/PriceSlider"
 import TypeSelector from "../../atoms/TypeSelector/TypeSelector"
 import Home from "../../../assets/home_3_line.svg"
 import Image from "next/image"
+import HeroBuilding from '../../../assets/hero-buildings.jpg'
 
 export default function HeroSection() {
   const [searchType, setSearchType] = useState("buy")
@@ -28,12 +29,12 @@ export default function HeroSection() {
   return (
     <section className={styles.hero}>
       <div className={styles.hero__info}>
-          <div className={styles.info__subcontainer}>
-            <Image src={Home} alt={'home_icon'} className={styles.home__icon} />
-            <p className={styles.agency}>Agencia Inmobiliaria</p>
-          </div>
-          <h3>ENCUENTRA LA PROPIEDAD</h3>
-          <h1>DE TUS SUEÑOS</h1>
+        <div className={styles.info__subcontainer}>
+          <Image src={Home} alt={'home_icon'} className={styles.home__icon} />
+          <p className={styles.agency}>Agencia Inmobiliaria</p>
+        </div>
+        <h3>ENCUENTRA LA PROPIEDAD</h3>
+        <h1>DE TUS SUEÑOS</h1>
       </div>
 
       <div className={styles.hero__image}>
@@ -45,19 +46,19 @@ export default function HeroSection() {
             className={`${styles.hero__img} ${i === current ? styles.is_active : ""}`}
           />
         ))} */}
-        <img src={"/hero-buildings.jpg"} className={styles.hero__img}></img>
+        <Image src={HeroBuilding} className={styles.hero__img} alt='hero-building'/>
       </div>
 
       <div className={styles.hero__content}>
-        
+
         <div className={styles.hero__search_tabs}>
-            <Button variant={searchType === "buy" ? "primary" : "outline"} onClick={() => setSearchType("buy")}>
-              Alquiler
-            </Button>
-            <Button variant={searchType === "rent" ? "primary" : "outline"} onClick={() => setSearchType("rent")}>
-              Venta
-            </Button>
-          </div>
+          <Button variant={searchType === "buy" ? "primary" : "outline"} onClick={() => setSearchType("buy")}>
+            Alquiler
+          </Button>
+          <Button variant={searchType === "rent" ? "primary" : "outline"} onClick={() => setSearchType("rent")}>
+            Venta
+          </Button>
+        </div>
 
         <div className={styles.hero__search_card}>
 
@@ -71,8 +72,8 @@ export default function HeroSection() {
                 className={styles.input_custom}
               />
             </div>
-            <TypeSelector options={PROPERTY_TYPES} type={"large"}/>
-            <TypeSelector options={BEDROOM_OPTIONS}/>
+            <TypeSelector options={PROPERTY_TYPES} type={"large"} />
+            <TypeSelector options={BEDROOM_OPTIONS} />
             <PriceSlider />
             <Button variant="primary">Buscar</Button>
           </div>

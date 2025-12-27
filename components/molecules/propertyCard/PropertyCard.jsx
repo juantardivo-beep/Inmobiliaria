@@ -2,6 +2,7 @@ import Link from "next/link"
 import Badge from "@/components/atoms/Badge/Badge"
 import { Bed, Bath, Square } from "lucide-react"
 import styles from "./propertyCard.module.scss"
+import Image from "next/image"
 
 export default function PropertyCard({ property }) {
   const formattedPrice = new Intl.NumberFormat("en-US", {
@@ -15,7 +16,7 @@ export default function PropertyCard({ property }) {
     <Link href={`/properties/${property.id}`} className={styles.property__card}>
 
       <div className={styles.property__card__image}>
-        <img src={`${property.image}`} alt={property.title} />
+        <Image src={`${property.image}`} alt={property.title} width={400} height={300}/>
         {property.featured && (
           <div className={styles.property__card__badge}>
             <Badge>Exclusiva</Badge>

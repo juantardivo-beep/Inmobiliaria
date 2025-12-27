@@ -1,11 +1,16 @@
+import Image from 'next/image';
 import styles from './aboutUS.module.scss';
+import maps from '../../../assets/maps.png'
+import cci from '../../../assets/cci.jpg'
+import ceci from '../../../assets/ceci.jpg'
+import fira from '../../../assets/fira.jpg'
 
 export default function AboutUS() {
 
     const endorsements = [
-        { name: "Juan Martínez", title: "CEO de Propiedades Premium", image: "/cci.jpg" },
-        { name: "María López", title: "Directora de Ventas Nacionales", image: "/ceci.jpg" },
-        { name: "Carlos Rodríguez", title: "Especialista en Valuaciones", image: "/fira.jpg" },
+        { name: "Juan Martínez", title: "CEO de Propiedades Premium", image: cci },
+        { name: "María López", title: "Directora de Ventas Nacionales", image: ceci },
+        { name: "Carlos Rodríguez", title: "Especialista en Valuaciones", image: fira },
     ]
 
     return (
@@ -43,7 +48,7 @@ export default function AboutUS() {
                     <h2>Dónde Estamos</h2>
                     <div className={styles.locationContent}>
                         <div className={styles.map}>
-                            <img src="/maps.png" alt="Mapa de ubicación" />
+                            <Image src={maps} alt="Mapa de ubicación"/>
                         </div>
                         <div className={styles.locationInfo}>
                             <h3>Oficina Principal</h3>
@@ -67,7 +72,7 @@ export default function AboutUS() {
                     <div className={styles.grid}>
                         {endorsements.map((person, idx) => (
                             <div key={idx} className={styles.card}>
-                                <img src={person.image} alt={person.name} />
+                                <Image src={person.image} alt={person.name} />
                                 <h3>{person.name}</h3>
                                 <p>{person.title}</p>
                             </div>

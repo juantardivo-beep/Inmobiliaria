@@ -1,6 +1,7 @@
 import PropertyCard from "@/components/molecules/propertyCard/PropertyCard"
 import Button from "@/components/atoms/Button"
 import styles from "./properties.module.scss"
+import property from '../../../assets/contemporary-home-with-mountain-views.jpg'
 
 const SAMPLE_PROPERTIES = [
   {
@@ -11,7 +12,7 @@ const SAMPLE_PROPERTIES = [
     bedrooms: 3,
     bathrooms: 2,
     sqft: 2400,
-    image: "/contemporary-home-with-mountain-views.jpg",
+    image: property,
     featured: true,
   },
   {
@@ -22,7 +23,7 @@ const SAMPLE_PROPERTIES = [
     bedrooms: 5,
     bathrooms: 4,
     sqft: 4200,
-    image: "/contemporary-home-with-mountain-views.jpg",
+    image: property,
     featured: true,
   },
   {
@@ -33,7 +34,7 @@ const SAMPLE_PROPERTIES = [
     bedrooms: 4,
     bathrooms: 3,
     sqft: 3500,
-    image: "/contemporary-home-with-mountain-views.jpg",
+    image: property,
     featured: true,
   },
   {
@@ -44,7 +45,7 @@ const SAMPLE_PROPERTIES = [
     bedrooms: 3,
     bathrooms: 2.5,
     sqft: 2800,
-    image: "/contemporary-home-with-mountain-views.jpg",
+    image: property,
     featured: true,
   },
 ]
