@@ -52,6 +52,11 @@ h1{
   src: url('./fonts/DINPro.otf') format('opentype');
 }
 
+@font-face {
+  font-family: 'Din-Black';
+  src: url('./fonts/DINPro-Black.otf') format('opentype');
+}
+
 /* Atom styles - Button */
 .btn-custom-primary {
   background-color: var(--color-red);

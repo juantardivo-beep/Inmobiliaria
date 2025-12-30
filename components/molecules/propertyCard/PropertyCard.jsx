@@ -3,6 +3,7 @@ import Badge from "@/components/atoms/Badge/Badge"
 import { Bed, Bath, Square } from "lucide-react"
 import styles from "./propertyCard.module.scss"
 import Image from "next/image"
+import 'flag-icons/css/flag-icons.min.css';
 
 export default function PropertyCard({ property }) {
   const formattedPrice = new Intl.NumberFormat("en-US", {
@@ -12,18 +13,30 @@ export default function PropertyCard({ property }) {
     maximumFractionDigits: 0,
   }).format(property.price)
 
+  const COUNTRY_FLAGS = {
+    'Argentina': 'ar',
+    'Brasil': 'br',
+    'Uruguay': 'uy',
+    'Paraguay': 'py',
+    'Chile': 'cl',
+    // Agregá los que necesites
+  };
+
   return (
     <Link href={`/properties/${property.id}`} className={styles.property__card}>
 
       <div className={styles.property__card__image}>
         <Image src={property.image} alt={property.title} width={400} height={300} />
-        {property.featured && (
-          <div className={styles.property__card__badge}>
-            <Badge>Exclusiva</Badge>
+        <div className={styles.property__card__badge}>
+          <div style={{ display: 'flex', gap: '0.5rem' }}>
+            {property.featured && (
+              <Badge type={'primary'}>Exclusiva</Badge>
+            )}
+            <Badge type={"secondary"}>{property.type}</Badge>
           </div>
-        )}
+          <span className={`fi fi-${COUNTRY_FLAGS[property.country]}`}></span>
+        </div>
       </div>
-
 
       <div className={styles.property__card__content}>
 

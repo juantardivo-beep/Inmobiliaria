@@ -1,10 +1,6 @@
 .selector_container {
     position: relative;
     width: 10rem;
-
-    &:global(.large) {
-        width: 15rem;
-    }
 }
 
 .property_selector {
@@ -25,12 +21,12 @@
 }
 
 .property_selector:hover {
-    border-color: var(--color-secondary);
+    border-color: var(--color-red);
 }
 
 .property_selector:focus {
     outline: none;
-    border-color: var(--color-secondary);
+    border-color: var(--color-red);
     box-shadow: 0 0 0 3px rgba(184, 112, 77, 0.1);
 }
 
@@ -67,11 +63,11 @@
 
 .option:hover {
     background-color: #f5f5f5;
-    color: var(--color-secondary);
+    color: var(--color-red);
 }
 
 .option.selected {
     background-color: rgba(184, 112, 77, 0.1);
-    color: var(--color-secondary);
+    color: var(--color-red);
     font-weight: 500;
 }

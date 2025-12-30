@@ -45,7 +45,7 @@ export default function Footer() {
           <h3>Links Rápidos</h3>
           <ul>
             <li>
-              <NavLink href="/inicio">Inicio</NavLink>
+              <NavLink href="/">Inicio</NavLink>
             </li>
             <li>
               <NavLink href="/internacional">Internacional</NavLink>

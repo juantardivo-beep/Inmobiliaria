@@ -2,7 +2,7 @@ import { useState, useRef, useEffect } from 'react';
 import { ChevronDown } from 'lucide-react';
 import styles from './typeSelector.module.scss';
 
-export default function TypeSelector({ options, type }) {
+export default function TypeSelector({ options, classname, style }) {
 
     const [propertyType, setPropertyType] = useState("")
     const [isOpen, setIsOpen] = useState(false)
@@ -21,9 +21,9 @@ export default function TypeSelector({ options, type }) {
     }, [])
 
     return (
-        <div className={`${styles.selector_container} ${type || ''}`} ref={containerRef}>
+        <div className={`${styles.selector_container}`} style={style} ref={containerRef}>
             <button
-                className={styles.property_selector}
+                className={`${classname ?? styles.property_selector}`}
                 onClick={() => setIsOpen(!isOpen)}
             >
                 <span>{selectedLabel}</span>

@@ -72,7 +72,7 @@ export default function HeroSection() {
                 className={styles.input_custom}
               />
             </div>
-            <TypeSelector options={PROPERTY_TYPES} type={"large"} />
+            <TypeSelector options={PROPERTY_TYPES} style={{width: '15rem'}}/>
             <TypeSelector options={BEDROOM_OPTIONS} />
             <PriceSlider />
             <Button variant="primary">Buscar</Button>
