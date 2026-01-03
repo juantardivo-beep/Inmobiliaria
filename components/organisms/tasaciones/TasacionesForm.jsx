@@ -53,7 +53,8 @@ export default function TasacionesForm() {
   return (
     <div className={styles.container}>
       <div className={styles.title}>
-        <h2>TASACIONES |</h2>
+        <h2>TASACIONES</h2>
+        <div className={styles.divider}></div>
         <p>Servicio de tasación profesional para su propiedad</p>
       </div>
       <div className={styles.info}>

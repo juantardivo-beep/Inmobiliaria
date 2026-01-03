@@ -25,6 +25,14 @@
     h2 {
         font-family: 'Din-Bold';
     }
+
+    .divider {
+        width: 1px;
+        height: 1.5rem;
+        border: 1px solid #666;
+        margin-bottom: 0.5rem;
+        margin-top: 0rem;
+    }
 }
 
 .info {
@@ -158,4 +166,57 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+@media (max-width: 640px) {
+    .container {
+        padding: 1rem;
+    }
+
+    .title {
+        flex-direction: column;
+        padding: 1rem 0rem;
+        height: 7rem;
+
+        h2 {
+            margin: 0;
+        }
+
+        .divider {
+            width: 0px;
+            height: 0rem;
+            border: 0px;
+            margin-bottom: 0rem;
+            margin-top: 0rem;
+        }
+    }
+
+    .info {
+        flex-direction: column;
+        margin-top: 2rem;
+    }
+
+    .sucursales {
+        width: 100%;
+        height: auto;
+        padding-right: 0rem;
+        margin-bottom: 3rem;
+    }
+
+    .form {
+        width: 100%;
+        height: auto;
+        margin-bottom: 3rem;
+    }
+
+    .row {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        height: auto;
+    }
+
+    .submitBtn {
+        justify-content: start;
+    }
 }

@@ -50,7 +50,8 @@ export default function ContactForm() {
   return (
     <div className={styles.container}>
       <div className={styles.title}>
-        <h2>CONTACTESE CON NOSOTROS |</h2>
+        <h2>CONTACTESE CON NOSOTROS</h2>
+        <div className={styles.divider}></div>
         <p>Complete el formulario y nos pondremos en contacto.</p>
       </div>
       <div className={styles.info}>

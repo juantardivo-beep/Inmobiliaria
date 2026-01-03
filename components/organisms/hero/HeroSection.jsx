@@ -1,11 +1,11 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import Button from "@/components/atoms/Button"
 import Input from "@/components/atoms/Input"
 import { Search } from "lucide-react"
 import styles from "./heroSection.module.scss"
-import { BEDROOM_OPTIONS, HERO_IMAGES, PROPERTY_TYPES } from "../../../constants/constants"
+import { BEDROOM_OPTIONS, PROPERTY_TYPES } from "../../../constants/constants"
 import PriceSlider from "../../atoms/PriceSlider/PriceSlider"
 import TypeSelector from "../../atoms/TypeSelector/TypeSelector"
 import Home from "../../../assets/home_3_line.svg"
@@ -15,16 +15,6 @@ import HeroBuilding from '../../../assets/hero-buildings.jpg'
 export default function HeroSection() {
   const [searchType, setSearchType] = useState("buy")
   const [searchQuery, setSearchQuery] = useState("")
-  const images = HERO_IMAGES
-  const [current, setCurrent] = useState(0)
-
-
-  // useEffect(() => {
-  //   const id = setInterval(() => {
-  //     setCurrent((c) => (c + 1) % images.length)
-  //   }, 10000)
-  //   return () => clearInterval(id)
-  // }, [])
 
   return (
     <section className={styles.hero}>
@@ -38,15 +28,7 @@ export default function HeroSection() {
       </div>
 
       <div className={styles.hero__image}>
-        {/* {images.map((src, i) => (
-          <img
-            key={i}
-            src={src}
-            alt={`Slide ${i + 1}`}
-            className={`${styles.hero__img} ${i === current ? styles.is_active : ""}`}
-          />
-        ))} */}
-        <Image src={HeroBuilding} className={styles.hero__img} alt='hero-building'/>
+        <Image src={HeroBuilding} className={styles.hero__img} alt='hero-building' />
       </div>
 
       <div className={styles.hero__content}>
@@ -72,8 +54,8 @@ export default function HeroSection() {
                 className={styles.input_custom}
               />
             </div>
-            <TypeSelector options={PROPERTY_TYPES} style={{width: '15rem'}}/>
-            <TypeSelector options={BEDROOM_OPTIONS} />
+            <TypeSelector options={PROPERTY_TYPES} style={{ width: '15rem' }} />
+            <TypeSelector options={BEDROOM_OPTIONS} style={{ width: '10rem' }}/>
             <PriceSlider />
             <Button variant="primary">Buscar</Button>
           </div>

@@ -1,6 +1,14 @@
 .featured__properties {
   padding: 5rem 3rem;
-  background-color: #f6f8fb
+  background-color: #f6f8fb;
+
+  @media (max-width: 1024px) {
+    padding-top: 0rem;
+  }
+
+  @media (max-width: 640px) {
+    padding: 3rem 3rem;
+  }
 }
 
 .featured__properties__header {
@@ -19,6 +27,10 @@
   color: #666;
   font-size: 1.125rem;
   max-width: 42rem;
+
+  @media (max-width: 640px) {
+    margin: 0rem;
+  }
 }
 
 .featured__properties__grid {

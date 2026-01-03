@@ -3,26 +3,66 @@
 import Logo from "@/components/atoms/Logo"
 import NavLink from "@/components/molecules/NavLink"
 import styles from "./header.module.scss"
+import { useState } from "react";
+import { Menu, X } from 'lucide-react';
 
 export default function Header() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
 
   return (
-    <header className={styles.header}>
-      <div className={styles.headerContainer}>
-        <Logo className={styles.logo} />
+    <>
+      <header className={styles.header}>
+        <div className={styles.headerContainer}>
+          <Logo className={styles.logo} />
 
-        <nav className={styles.headerNav}>
-          <NavLink href="/">Inicio</NavLink>
-          <NavLink href="/alquileres">Alquileres</NavLink>
-          <NavLink href="/ventas">Ventas</NavLink>
-          <NavLink href="/tasaciones">Tasaciones</NavLink>
-          <NavLink href="/internacional">Internacional</NavLink>
-          <NavLink href="/nosotros">Nosotros</NavLink>
-          <NavLink href="/contacto">Contacto</NavLink>
+
+          <nav className={styles.headerNav}>
+            <NavLink href="/">Inicio</NavLink>
+            <NavLink href="/alquileres">Alquileres</NavLink>
+            <NavLink href="/ventas">Ventas</NavLink>
+            <NavLink href="/tasaciones">Tasaciones</NavLink>
+            <NavLink href="/internacional">Internacional</NavLink>
+            <NavLink href="/nosotros">Nosotros</NavLink>
+            <NavLink href="/contacto">Contacto</NavLink>
+          </nav>
+
+          {/* Botón Hamburguesa */}
+          <button
+            className={styles.menuButton}
+            onClick={toggleMenu}
+            aria-label="Toggle menu"
+          >
+            {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
+          </button>
+        </div>
+      </header>
+
+      {/* Overlay para cerrar el menú */}
+      <div
+        className={`${styles.overlay} ${isMenuOpen ? styles.open : ''}`}
+        onClick={closeMenu}
+      />
+
+      {/* Menú Mobile */}
+      <div className={`${styles.mobileMenu} ${isMenuOpen ? styles.open : ''}`}>
+        <nav className={styles.mobileMenuNav}>
+          <NavLink href="/" onClick={closeMenu}>Inicio</NavLink>
+          <NavLink href="/alquileres" onClick={closeMenu}>Alquileres</NavLink>
+          <NavLink href="/ventas" onClick={closeMenu}>Ventas</NavLink>
+          <NavLink href="/tasaciones" onClick={closeMenu}>Tasaciones</NavLink>
+          <NavLink href="/internacional" onClick={closeMenu}>Internacional</NavLink>
+          <NavLink href="/nosotros" onClick={closeMenu}>Nosotros</NavLink>
+          <NavLink href="/contacto" onClick={closeMenu}>Contacto</NavLink>
         </nav>
-
-        {/* <img src={searchIcon.src} alt="Buscar" className={styles.searchIcon} /> */}
       </div>
-    </header>
-  )
+    </>
+  );
 }

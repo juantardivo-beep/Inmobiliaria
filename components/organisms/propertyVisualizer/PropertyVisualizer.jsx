@@ -123,7 +123,9 @@ export default function PropertyVisualizer({ href }) {
                     <h3>{propertyCount}</h3>
                     <p>resultados</p>
                 </div>
-                <TypeSelector options={ORDER_OPTIONS} />
+                <div className={styles.selector}>
+                    <TypeSelector options={ORDER_OPTIONS} />
+                </div>
             </div>
 
             <div className={styles.content}>

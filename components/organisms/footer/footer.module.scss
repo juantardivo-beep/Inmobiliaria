@@ -26,11 +26,71 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
     margin-top: 5rem;
+    width: 100%;
+    max-width: 1200px;
+}
+
+@media (min-width: 1024px) {
+    .footer__grid {
+        padding: 0rem 2rem;
+    }
 }
 
 @media (min-width: 768px) {
     .footer__grid {
         grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .footer {
+        height: auto;
+        min-height: 25rem;
+        padding: 2rem 1rem 0;
+    }
+
+    .background {
+        height: 0;
+    }
+
+    .footer__grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        margin-top: 2rem;
+        padding: 0 0.5rem;
+    }
+
+    .footer__column {
+        text-align: center;
+    }
+
+    .footer__column ul li {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer {
+        padding: 0;
+         background-color: #0d1021;
+    }
+
+    .background {
+        height: 0;
+    }
+
+    .footer__grid {
+        gap: 1.5rem;
+        margin-top: 1.5rem;
+    }
+
+    .footer__column h3 {
+        font-size: 1rem;
+    }
+
+    .footer__column ul li p,
+    .footer__column ul li a {
+        font-size: 0.8rem;
     }
 }
 
@@ -56,6 +116,7 @@
 
 .icons {
     width: 1rem;
+    flex-shrink: 0;
 }
 
 .footer__column ul li p {
@@ -94,8 +155,61 @@
     width: 100%;
     height: 5rem;
     margin-top: 1rem;
-    padding: 0rem 1.5rem;
-    padding-left: 40%;
+    padding: 0 1.5rem;
+}
+
+@media (max-width: 1024px) {
+    .footer__bottom {
+        flex-direction: column-reverse;
+        height: auto;
+        padding: 1.5rem 1rem;
+        gap: 1rem;
+        margin-top: 2rem;
+    }
+
+    .footer__copyright {
+        text-align: center;
+    }
+
+    .logo {
+        width: 6rem;
+        height: 2.5rem;
+    }
+}
+
+/* Mobile footer bottom */
+@media (max-width: 768px) {
+    .footer__bottom {
+        flex-direction: column-reverse;
+        height: auto;
+        padding: 1.5rem 1rem;
+        gap: 1rem;
+        margin-top: 2rem;
+    }
+
+    .footer__copyright {
+        text-align: center;
+    }
+
+    .logo {
+        width: 6rem;
+        height: 2.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer__bottom {
+        padding: 1rem 0.75rem;
+    }
+
+    .footer__copyright {
+        font-size: 0.75rem;
+    }
+
+    .logo {
+        width: 5rem;
+        height: 2rem;
+    }
 }
 
 .footer__copyright {
