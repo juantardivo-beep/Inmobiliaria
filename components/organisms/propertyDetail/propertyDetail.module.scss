@@ -116,3 +116,62 @@
         font-weight: 600;
     }
 }
+
+@media (max-width: 1024px) {
+
+    .image {
+        width: 50%;
+    }
+
+    .property__card__badge {
+        left: 55%;
+    }
+
+    .description {
+        width: 100%;
+    }
+}
+
+@media (max-width: 640px) {
+
+    .header {
+        height: 20rem;
+        margin-bottom: 4rem;
+    }
+
+    .image {
+        width: 100%;
+        height: 20rem;
+        border-radius: 0rem;
+    }
+
+    .property__card__badge {
+        left: 10%;
+        top: 70%;
+        width: 80%;
+        padding: 1rem;
+        gap: 0.5rem;
+        opacity: 1;
+    }
+
+    .description {
+        width: 100%;
+        margin-top: 1rem;
+    }
+
+    .detail {
+        display: flex;
+        flex-direction: column;
+        gap: 0rem;
+        padding: 1rem;
+    }
+
+    .detail_column {
+        width: 100%;
+    }
+
+    .detail_row {
+        padding: 0rem;
+        margin-bottom: 1.5rem;
+    }
+}

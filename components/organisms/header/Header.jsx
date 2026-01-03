@@ -14,6 +14,7 @@ export default function Header() {
   };
 
   const closeMenu = () => {
+    console.log("AAAAAAAA")
     setIsMenuOpen(false);
   };
 
@@ -53,14 +54,14 @@ export default function Header() {
 
       {/* Menú Mobile */}
       <div className={`${styles.mobileMenu} ${isMenuOpen ? styles.open : ''}`}>
-        <nav className={styles.mobileMenuNav}>
-          <NavLink href="/" onClick={closeMenu}>Inicio</NavLink>
-          <NavLink href="/alquileres" onClick={closeMenu}>Alquileres</NavLink>
-          <NavLink href="/ventas" onClick={closeMenu}>Ventas</NavLink>
-          <NavLink href="/tasaciones" onClick={closeMenu}>Tasaciones</NavLink>
-          <NavLink href="/internacional" onClick={closeMenu}>Internacional</NavLink>
-          <NavLink href="/nosotros" onClick={closeMenu}>Nosotros</NavLink>
-          <NavLink href="/contacto" onClick={closeMenu}>Contacto</NavLink>
+        <nav className={styles.mobileMenuNav} onClick={closeMenu}>
+          <NavLink href="/">Inicio</NavLink>
+          <NavLink href="/alquileres">Alquileres</NavLink>
+          <NavLink href="/ventas">Ventas</NavLink>
+          <NavLink href="/tasaciones">Tasaciones</NavLink>
+          <NavLink href="/internacional">Internacional</NavLink>
+          <NavLink href="/nosotros">Nosotros</NavLink>
+          <NavLink href="/contacto">Contacto</NavLink>
         </nav>
       </div>
     </>
