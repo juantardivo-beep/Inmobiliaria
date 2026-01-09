@@ -36,7 +36,7 @@ export async function getProperties() {
   try {
     const res = await fetch(
       `${WORDPRESS_API_URL}/property?_embed=true&per_page=100`,
-      { next: { revalidate: 60 } }
+      { cache: "force-cache" }
     )
 
     if (!res.ok) return []
@@ -71,7 +71,8 @@ export function transformWordPressProperty(wpProperty: WordPressProperty) {
 
 export async function getPropertyBySlug(slug: string) {
   const res = await fetch(
-    `${WORDPRESS_API_URL}/property?slug=${slug}&_embed=true`
+    `${WORDPRESS_API_URL}/property?slug=${slug}&_embed=true`,
+    { cache: "force-cache" }
   )
 
   if (!res.ok) return null
