@@ -1,97 +1,15 @@
 import styles from './propertyVisualizer.module.scss';
-import { useMemo, useState } from "react"
+import { useEffect, useMemo, useState } from "react"
 import PropertyCard from "@/components/molecules/propertyCard/PropertyCard"
-import placeholderImg from "../../../assets/contemporary-home-with-mountain-views.jpg"
 import TypeSelector from "../../atoms/TypeSelector/TypeSelector"
 import { COUNTRIES, ORDER_OPTIONS } from "../../../constants/constants"
 import Image from "next/image"
 import leftArrow from "../../../assets/left-arrow.svg"
 import rightArrow from "../../../assets/right-arrow.svg"
-
-const PROPERTIES = [
-    {
-        id: "uy-1",
-        title: "Apartamento frente al mar",
-        location: "Punta del Este, Uruguay",
-        price: 450000,
-        bedrooms: 2,
-        bathrooms: 2,
-        sqft: 120,
-        image: placeholderImg,
-        featured: true,
-        type: 'Alquiler',
-        country: COUNTRIES.URUGUAY,
-        description: "Description It is a long established fact that a reader will be distrac by any websites look for ways prevent AdBlock from blocking annoying ads. As a result, we've focused on improving our funct so that we can overcome these anti-ad blocking attempts. Of course, you can help us continue to improve our ad blocking ability by reporting any time you run into a website that won't allow you to block the readable content of a page when looking at its layout. It is a long established fact"
-    },
-    {
-        id: "uy-2",
-        title: "Casa familiar en barrio tranquilo",
-        location: "Montevideo, Uruguay",
-        price: 320000,
-        bedrooms: 3,
-        bathrooms: 2,
-        sqft: 200,
-        image: placeholderImg,
-        type: 'Alquiler',
-        country: COUNTRIES.URUGUAY,
-        description: "Description It is a long established fact that a reader will be distrac by any websites look for ways prevent AdBlock from blocking annoying ads. As a result, we've focused on improving our funct so that we can overcome these anti-ad blocking attempts. Of course, you can help us continue to improve our ad blocking ability by reporting any time you run into a website that won't allow you to block the readable content of a page when looking at its layout. It is a long established fact"
-    },
-    {
-        id: "br-1",
-        title: "Penthouse en la playa",
-        location: "Florianópolis, Brasil",
-        price: 780000,
-        bedrooms: 4,
-        bathrooms: 3,
-        sqft: 300,
-        image: placeholderImg,
-        featured: true,
-        type: 'Venta',
-        country: COUNTRIES.BRASIL,
-        description: "Description It is a long established fact that a reader will be distrac by any websites look for ways prevent AdBlock from blocking annoying ads. As a result, we've focused on improving our funct so that we can overcome these anti-ad blocking attempts. Of course, you can help us continue to improve our ad blocking ability by reporting any time you run into a website that won't allow you to block the readable content of a page when looking at its layout. It is a long established fact"
-    },
-    {
-        id: "br-2",
-        title: "Condominio moderno",
-        location: "São Paulo, Brasil",
-        price: 520000,
-        bedrooms: 3,
-        bathrooms: 2,
-        sqft: 180,
-        image: placeholderImg,
-        type: 'Venta',
-        country: COUNTRIES.BRASIL,
-        description: "Description It is a long established fact that a reader will be distrac by any websites look for ways prevent AdBlock from blocking annoying ads. As a result, we've focused on improving our funct so that we can overcome these anti-ad blocking attempts. Of course, you can help us continue to improve our ad blocking ability by reporting any time you run into a website that won't allow you to block the readable content of a page when looking at its layout. It is a long established fact"
-    },
-    {
-        id: "ar-1",
-        title: "Condominio moderno",
-        location: "Buenos Aires, Argentina",
-        price: 520000,
-        bedrooms: 3,
-        bathrooms: 2,
-        sqft: 180,
-        image: placeholderImg,
-        type: 'Venta',
-        country: COUNTRIES.ARGENTINA,
-        description: "Description It is a long established fact that a reader will be distrac by any websites look for ways prevent AdBlock from blocking annoying ads. As a result, we've focused on improving our funct so that we can overcome these anti-ad blocking attempts. Of course, you can help us continue to improve our ad blocking ability by reporting any time you run into a website that won't allow you to block the readable content of a page when looking at its layout. It is a long established fact"
-    },
-    {
-        id: "ar-2",
-        title: "Condominio moderno",
-        location: "Santa Fe, Argentina",
-        price: 520000,
-        bedrooms: 3,
-        bathrooms: 2,
-        sqft: 180,
-        image: placeholderImg,
-        type: 'Alquiler',
-        country: COUNTRIES.ARGENTINA,
-        description: "Description It is a long established fact that a reader will be distrac by any websites look for ways prevent AdBlock from blocking annoying ads. As a result, we've focused on improving our funct so that we can overcome these anti-ad blocking attempts. Of course, you can help us continue to improve our ad blocking ability by reporting any time you run into a website that won't allow you to block the readable content of a page when looking at its layout. It is a long established fact"
-    },
-]
+import { getProperties, transformWordPressProperty } from "../../../lib/wordpress-api"
 
 export default function PropertyVisualizer({ href }) {
+    const [properties, setProperties] = useState([])
     const [minPrice, setMinPrice] = useState(0)
     const [maxPrice, setMaxPrice] = useState(99999999)
     const [beds, setBeds] = useState(0)
@@ -99,7 +17,16 @@ export default function PropertyVisualizer({ href }) {
     const pageSize = 6
     const propertyCount = 100;
 
-    const list = useMemo(() => PROPERTIES || [])
+    useEffect(() => {
+        async function loadProperties() {
+            const wpProperties = await getProperties({ perPage: 4 })
+            setProperties(wpProperties.map(transformWordPressProperty))
+        }
+
+        loadProperties()
+    }, [])
+
+    const list = useMemo(() => properties || [])
 
     const filtered = list.filter((p) => p.price >= minPrice &&
         p.price <= maxPrice &&
@@ -108,9 +35,6 @@ export default function PropertyVisualizer({ href }) {
             href === "/alquileres" ? p.type === 'Alquiler' :
                 href === "/internacional" ? p.country !== COUNTRIES.ARGENTINA : true)
     )
-
-    // ensure reset when relevant inputs change
-    // (keep simple, not using useEffect to avoid SSR mismatch in this small client component)
 
     const totalPages = Math.max(1, Math.ceil(filtered.length / pageSize))
     const startIndex = (currentPage - 1) * pageSize

@@ -23,7 +23,7 @@ export default function PropertyCard({ property }) {
   };
 
   return (
-    <Link href={`/properties/${property.id}`} className={styles.property__card}>
+    <Link href={`/properties/${property.slug}`} className={styles.property__card}>
 
       <div className={styles.property__card__image}>
         <Image src={property.image} alt={property.title} width={400} height={300} />

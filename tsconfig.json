@@ -34,7 +34,7 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts"
-, "next.config.ts"  ],
+, "next.config.ts", "helpers/ImageWrapper.jsx"  ],
   "exclude": [
     "node_modules"
   ]
