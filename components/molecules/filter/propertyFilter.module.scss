@@ -55,11 +55,19 @@
   gap: 1rem;
 }
 
+.actionBtn {
+  flex: 1;
+}
+
 @media (max-width: 1024px) {
   .filterContainer {
     width: 100%;
     margin: 0rem;
     margin-top: 1rem;
     background-color: white
+  }
+
+  .actionBtn {
+    height: 3rem;
   }
 }

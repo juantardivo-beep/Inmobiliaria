@@ -1,23 +1,19 @@
 
 import Slider from "rc-slider";
 import "rc-slider/assets/index.css";
-import { useState } from "react";
 import styles from "./priceSlider.module.scss";
 
-export default function PriceSlider() {
-    const MIN_PRICE = 50000;
-
-    const [maxPrice, setMaxPrice] = useState(800000);
+export default function PriceSlider({ value, onChange, min = 0, max = 1000000 }) {
 
     return (
         <div className={styles.priceSliderWrapper}>
             <Slider
                 className={styles.priceSlider}
-                min={MIN_PRICE}
-                max={1000000}
-                step={20000}
-                value={maxPrice}
-                onChange={setMaxPrice}
+                min={min}
+                max={max}
+                step={10000}
+                value={value}
+                onChange={onChange}
                 handleRender={(node) => (
                     <div className={styles.thumbWrapper}>
                         {node}
@@ -26,7 +22,7 @@ export default function PriceSlider() {
             />
 
             <span className={styles.priceValue}>
-                Hasta ${maxPrice.toLocaleString()}
+                Hasta ${value.toLocaleString()}
             </span>
         </div>
     );

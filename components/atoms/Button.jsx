@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 
-export default function Button({ children, variant = "primary", className = "", onClick, type = "button", href }) {
+export default function Button({ children, variant = "primary", className = "", onClick, type = "button", href, disabled = false, }) {
   const variantClasses = {
     primary: "btn-custom-primary",
     outline: "btn-custom-outline",
@@ -20,7 +20,7 @@ export default function Button({ children, variant = "primary", className = "", 
   }
 
   return (
-    <button type={type} className={classes} onClick={onClick}>
+    <button type={type} className={classes} onClick={onClick} disabled={disabled}>
       {children}
     </button>
   )

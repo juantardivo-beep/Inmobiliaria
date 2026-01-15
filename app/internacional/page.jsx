@@ -8,6 +8,9 @@ export default function InternacionalPage() {
 
   return (
     <main className="min-vh-100">
+      <div className={styles.pageTitle}>
+        <p>INTERNACIONAL</p>
+      </div>
       <GoogleMaps />
       <div className={styles.container}>
         <PropertyFilter />

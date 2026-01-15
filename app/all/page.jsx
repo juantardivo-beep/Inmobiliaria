@@ -4,17 +4,14 @@ import PropertyFilter from "../../components/molecules/filter/PropertyFilter"
 import GoogleMaps from "../../components/molecules/googleMaps/googleMaps"
 import styles from './page.module.scss'
 
-export default function VentasPage() {
+export default function AllPropertiesPage() {
 
     return (
         <main className="min-vh-100">
-            <div className={styles.pageTitle}>
-                <p>VENTAS</p>
-            </div>
             <GoogleMaps />
             <div className={styles.container}>
                 <PropertyFilter />
-                <PropertyVisualizer href={"/ventas"} />
+                <PropertyVisualizer />
             </div>
         </main>
     )

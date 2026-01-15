@@ -8,6 +8,9 @@ export default function AlquileresPage() {
 
   return (
     <main className="min-vh-100">
+      <div className={styles.pageTitle}>
+        <p>ALQUILERES</p>
+      </div>
       <GoogleMaps />
       <div className={styles.container}>
         <PropertyFilter />

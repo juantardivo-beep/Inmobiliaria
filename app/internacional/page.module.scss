@@ -1,6 +1,19 @@
-.container{
-    width: 100%;
-    display: flex;
+.container {
+  width: 100%;
+  display: flex;
+}
+
+.pageTitle {
+  height: 8rem;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  p {
+    font-family: 'Din-Bold';
+    font-size: 2rem;
+  }
 }
 
 @media (max-width: 1024px) {

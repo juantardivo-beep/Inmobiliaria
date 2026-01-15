@@ -32,7 +32,7 @@ export default function PropertyCard({ property }) {
             {property.featured && (
               <Badge type={'primary'}>Exclusiva</Badge>
             )}
-            <Badge type={"secondary"}>{property.type}</Badge>
+            <Badge type={"secondary"}>{property.operation}</Badge>
           </div>
           <span className={`fi fi-${COUNTRY_FLAGS[property.country]}`}></span>
         </div>

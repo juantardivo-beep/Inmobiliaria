@@ -23,6 +23,11 @@
     justify-content: space-between;
     gap: 0.5rem;
 
+    &.hasValue {
+        color: var(--color-primary);
+        font-weight: 500;
+    }
+
     @media (max-width: 640px) {
         gap: 0rem;
         font-size: 0.85rem;

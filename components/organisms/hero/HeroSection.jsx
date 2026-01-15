@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useEffect, useEffectEvent, useState } from "react"
 import Button from "@/components/atoms/Button"
 import Input from "@/components/atoms/Input"
 import { Search } from "lucide-react"
@@ -11,10 +11,38 @@ import TypeSelector from "../../atoms/TypeSelector/TypeSelector"
 import Home from "../../../assets/home_3_line.svg"
 import Image from "next/image"
 import HeroBuilding from '../../../assets/hero-buildings.jpg'
+import { useSelector, useDispatch } from "react-redux"
+import { setAllFilters } from "../../../store/propertyFilterSlice"
+import { useRouter } from "next/navigation"
 
 export default function HeroSection() {
-  const [searchType, setSearchType] = useState("buy")
-  const [searchQuery, setSearchQuery] = useState("")
+  const dispatch = useDispatch();
+  const router = useRouter()
+  const [searchType, setSearchType] = useState("rent")
+  const appliedFilters = useSelector(state => state.propertyFilters)
+  const [draft, setDraft] = useState(appliedFilters)
+
+  const onChange = (key, value) => {
+    setDraft(prev => ({
+      ...prev,
+      [key]: value
+    }))
+  }
+
+  const applyFilters = () => {
+    dispatch(setAllFilters(draft))
+    router.push("/all")
+  }
+
+  useEffect(() => {
+    setDraft(appliedFilters)
+  }, [appliedFilters])
+
+  useEffect(() => {
+    if (searchType === 'rent') onChange("operationType", "Alquiler")
+    else if (searchType === 'buy') onChange("operationType", "Venta")
+  }, [searchType])
+
 
   return (
     <section className={styles.hero}>
@@ -34,10 +62,10 @@ export default function HeroSection() {
       <div className={styles.hero__content}>
 
         <div className={styles.hero__search_tabs}>
-          <Button variant={searchType === "buy" ? "primary" : "outline"} onClick={() => setSearchType("buy")}>
+          <Button variant={searchType === "rent" ? "primary" : "outline"} onClick={() => setSearchType("rent")}>
             Alquiler
           </Button>
-          <Button variant={searchType === "rent" ? "primary" : "outline"} onClick={() => setSearchType("rent")}>
+          <Button variant={searchType === "buy" ? "primary" : "outline"} onClick={() => setSearchType("buy")}>
             Venta
           </Button>
         </div>
@@ -49,15 +77,39 @@ export default function HeroSection() {
               <Search />
               <Input
                 placeholder="País, Ciudad, Dirección"
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
+                value={draft.search}
+                onChange={(e) =>
+                  onChange("search", e.target.value)
+                }
                 className={styles.input_custom}
               />
             </div>
-            <TypeSelector options={PROPERTY_TYPES} style={{ width: '15rem' }} />
-            <TypeSelector options={BEDROOM_OPTIONS} style={{ width: '10rem' }}/>
-            <PriceSlider />
-            <Button variant="primary">Buscar</Button>
+            <TypeSelector
+              options={PROPERTY_TYPES}
+              value={draft.propertyType}
+              onChange={(value) => {
+                onChange("propertyType", value)
+              }}
+              style={{ width: '15rem' }}
+            />
+            <TypeSelector
+              options={BEDROOM_OPTIONS}
+              value={draft.beds}
+              onChange={(v) =>
+                onChange("beds", Number(v))
+              }
+              style={{ width: '10rem' }}
+            />
+            <PriceSlider
+              value={draft.maxPrice}
+              onChange={(v) => {
+                setDraft(prev => ({
+                  ...prev,
+                  maxPrice: v
+                }))
+              }}
+            />
+            <Button variant="primary" onClick={applyFilters}>Buscar</Button>
           </div>
         </div>
       </div>

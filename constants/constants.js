@@ -10,17 +10,17 @@ export const HERO_IMAGES = [
 
 export const PROPERTY_TYPES = [
   { value: "", label: "Todos los tipos" },
-  { value: "house", label: "Casa" },
-  { value: "apartment", label: "Apartamento" },
-  { value: "penthouse", label: "Penthouse" },
-  { value: "commercial", label: "Comercial" },
-  { value: "land", label: "Terreno" },
+  { value: "Casa", label: "Casa" },
+  { value: "Departamento", label: "Departamento" },
+  { value: "Duplex", label: "Duplex" },
+  { value: "Terreno", label: "Terreno" },
 ]
 
 export const BEDROOM_OPTIONS = [
-  { value: "", label: "Habitaciones" },
-  { value: "1", label: "1+" },
-  { value: "2", label: "2+" },
+  { value: 0, label: "Habitaciones" },
+  { value: 1, label: "1+" },
+  { value: 2, label: "2+" },
+  { value: 3, label: "3+" },
 ]
 
 export const HOOD_OPTIONS = [

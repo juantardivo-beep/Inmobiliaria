@@ -22,7 +22,8 @@ export interface WordPressProperty {
     featured: string | boolean
     operation: string
     country: string
-    description: string
+    description: string,
+    type: string
   }
   _embedded?: {
     "wp:featuredmedia"?: Array<{
@@ -36,7 +37,7 @@ export async function getProperties() {
   try {
     const res = await fetch(
       `${WORDPRESS_API_URL}/property?_embed=true&per_page=100`,
-      { cache: "force-cache" }
+      { cache: "no-store" }
     )
 
     if (!res.ok) return []
@@ -54,7 +55,7 @@ export function transformWordPressProperty(wpProperty: WordPressProperty) {
 
   return {
     id: wpProperty.id,
-    slug: wpProperty.slug, // 🔥 CLAVE
+    slug: wpProperty.slug,
     title: wpProperty.title.rendered,
     location: wpProperty.acf?.location || "",
     price: wpProperty.acf?.price || 0,
@@ -63,9 +64,10 @@ export function transformWordPressProperty(wpProperty: WordPressProperty) {
     sqft: wpProperty.acf?.square_feet || 0,
     image: featuredImage,
     featured: wpProperty.acf?.featured === true,
-    type: wpProperty.acf?.operation || "",
+    operation: wpProperty.acf?.operation || "",
     country: wpProperty.acf?.country || "",
     description: wpProperty.acf?.description || "",
+    type: wpProperty.acf?.type || ""
   }
 }
 

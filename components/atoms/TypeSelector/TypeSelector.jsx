@@ -2,13 +2,13 @@ import { useState, useRef, useEffect } from 'react';
 import { ChevronDown } from 'lucide-react';
 import styles from './typeSelector.module.scss';
 
-export default function TypeSelector({ options, classname, style }) {
-
-    const [propertyType, setPropertyType] = useState("")
+export default function TypeSelector({ options, value, onChange, classname, style }) {
     const [isOpen, setIsOpen] = useState(false)
     const containerRef = useRef(null)
+    const hasValue = Boolean(value)
 
-    const selectedLabel = options.find(type => type.value === propertyType)?.label;
+    const selectedLabel =
+        options.find(opt => opt.value === value)?.label;
 
     useEffect(() => {
         const handleClickOutside = (event) => {
@@ -21,9 +21,9 @@ export default function TypeSelector({ options, classname, style }) {
     }, [])
 
     return (
-        <div className={`${styles.selector_container}`} style={style} ref={containerRef}>
+        <div className={styles.selector_container} style={style} ref={containerRef}>
             <button
-                className={`${classname ?? styles.property_selector}`}
+                className={`${classname ?? styles.property_selector} ${hasValue ? styles.hasValue : ''}`}
                 onClick={() => setIsOpen(!isOpen)}
             >
                 <span>{selectedLabel}</span>
@@ -32,16 +32,16 @@ export default function TypeSelector({ options, classname, style }) {
 
             {isOpen && (
                 <div className={styles.options_menu}>
-                    {options.map((type) => (
+                    {options.map((opt) => (
                         <button
-                            key={type.value}
-                            className={`${styles.option} ${propertyType === type.value ? styles.selected : ''}`}
+                            key={opt.value}
+                            className={`${styles.option} ${value === opt.value ? styles.selected : ''}`}
                             onClick={() => {
-                                setPropertyType(type.value)
+                                onChange(opt.value);
                                 setIsOpen(false)
                             }}
                         >
-                            {type.label}
+                            {opt.label}
                         </button>
                     ))}
                 </div>
